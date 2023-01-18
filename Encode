@@ -7,8 +7,6 @@ let stringToEncode = process.argv[2];
 let rawdata = fs.readFileSync('Example-Encoding.json');
 let encoding = JSON.parse(rawdata);
 
-console.log(encoding);
-
 let returnString = stringToEncode.toUpperCase();
 
 for (let i = 0; i < encoding.words.length; i++)
