@@ -1,0 +1,27 @@
+'use strict';
+
+const fs = require('fs');
+
+let stringToEncode = process.argv[2];
+
+let rawdata = fs.readFileSync('Example-Encoding.json');
+let encoding = JSON.parse(rawdata);
+
+console.log(encoding);
+
+let returnString = stringToEncode.toUpperCase();
+
+for (let i = 0; i < encoding.words.length; i++)
+{
+    //regular expression to search for a full word.
+    var regex = new RegExp('\\b' + encoding.words[i][0].toUpperCase() + '\\b', "g");
+    returnString = returnString.replaceAll(regex, encoding.words[i][1].toUpperCase())
+}
+
+for (let j = 0; j < encoding.characters.length; j++)
+{    
+    returnString = returnString.replaceAll( encoding.characters[j][0], encoding.characters[j][1])
+}
+
+console.log(returnString);
+

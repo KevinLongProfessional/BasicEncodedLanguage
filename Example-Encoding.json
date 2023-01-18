@@ -1,0 +1,8 @@
+{ "words" : [
+        ["HELLO", "basic"],
+        ["WORLD", "example"]
+    ],
+    "characters" : [
+        ["!", "."]
+    ]
+}
